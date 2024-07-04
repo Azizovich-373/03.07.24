@@ -44,14 +44,13 @@ export function Product(item, array) {
     const new_name = document.querySelector('.new_name')
     edit_btn.onclick = () => {
         dialog.classList.add('show')
-        product_inc.classList.add('hide')
+        save_edit.onclick = () => {
+            dialog.classList.remove('show')
+            const val = new_name.value
+            name_prod.innerHTML = val
+        }
     }
-    save_edit.onclick = () => {
-        dialog.classList.remove('show')
-        product_inc.classList.remove('hide')
-        const val = new_name.value
-        name_prod.innerHTML = val
-    }
+    
 
     return product
 }
